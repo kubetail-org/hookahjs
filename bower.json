@@ -1,0 +1,30 @@
+{
+  "name": "hookahjs",
+  "version": "0.0.1",
+  "license": "MIT",
+  "authors": [
+    "Andres Morey <andres@muicss.com>"
+  ],
+  "homepage": "https://github.com/muicss/hookahjs",
+  "description": "JS library that adds empty/dirty/touched CSS hooks to input and textarea elements",
+  "main": [
+    "dist/hookahjs.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/muicss/hookahjs.git"
+  },
+  "keywords": [
+    "input",
+    "hooks"
+  ],
+  "dependencies": {
+  },
+  "ignore": [
+    "examples",
+    "gulpfile.js",
+    "package.json",
+    "test",
+    "umd-templates"
+  ]
+}

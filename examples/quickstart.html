@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script src="assets/hookahjs/hookah.js"></script>
+    <style>
+      .hkjs--touched:not(:valid) {
+        border: 1px solid red;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var el = document.createElement('input');
+        el.required = true;
+        document.body.appendChild(el);
+      });
+    </script>
+  </head>
+  <body>
+    <input type="email" required>
+  </body>
+</html>
