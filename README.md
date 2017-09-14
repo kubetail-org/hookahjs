@@ -76,7 +76,7 @@ Note that if you initialize HookahJS after the `DOMContentLoaded` event fires, t
 
 ### How to add HookahJS support selectively
 
-By default, HookahJS will add event listeners to all current and future `<input>` and `<textarea>` elements. To prevent this behavior you can listen to the `hkjs-load` event and call the `preventDefault()` method on the event object. You can also use the `hkjs` global object to add hooks to individual elements:
+By default, HookahJS will add event listeners to all current and future `<input>` and `<textarea>` elements. To prevent this behavior you can listen to the `hkjs-init` event and call the `preventDefault()` method on the event object. You can also use the `hkjs` global object to add hooks to individual elements:
 
 ```javascript
 window.addEventListener('hkjs-init', function(ev) {
