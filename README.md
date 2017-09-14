@@ -15,6 +15,8 @@ HookahJS is a tiny JS library that monitors all `<input>` and `<textarea>` eleme
   * `hkjs--touched` - control element has seen a `blur` event
   * `hkjs--untouched` - control element has not seen a `blur` event
 
+HookahJS is 979 bytes (minified + gzipped).
+
 ## Quickstart
 
 To use HookahJS you only need to add `hookah.js` to your page and the library will automatically add event listeners to all current and future `<input>` and `<textarea>` elements. The following example will draw a red box around an invalid input box after the user has touched the element:
