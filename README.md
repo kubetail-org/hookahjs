@@ -1,6 +1,6 @@
 # HookahJS
 
-<img src="https://image.flaticon.com/icons/svg/343/343448.svg" width="250px">
+<img src="https://www.muicss.com/static/images/hookahjs.svg" width="250px">
 
 HookahJS is a tiny JS library that monitors all `<input>` and `<textarea>` elements on your page and adds `empty/dirty/touched` CSS hooks in response to user interactions with the element.
 
@@ -22,7 +22,7 @@ To use HookahJS you only need to add `hookah.js` to your page and the library wi
 ```html
 <html>
   <head>
-    <script src="//cdn.rawgit.com/muicss/hookah/0.0.1/dist/hookah.min.js"></script>
+    <script src="//cdn.rawgit.com/muicss/hookahjs/0.0.1/dist/hookah.min.js"></script>
     <style>
       .hkjs--touched:not(:valid) {
         border: 1px solid red;
@@ -53,8 +53,8 @@ Note: HookahJS will support IE8+ for dynamic DOM elements initialized explicitly
 
 For production systems we recommend that you host the library file yourself which you can download from the `dist/` directory in this repository:
 
- * [hookah.js](https://cdn.rawgit.com/muicss/hookah/0.0.1/dist/hookah.js)
- * [hookah.min.js](https://cdn.rawgit.com/muicss/hookah/0.0.1/dist/hookah.min.js)
+ * [hookah.js](https://cdn.rawgit.com/muicss/hookahjs/0.0.1/dist/hookah.js)
+ * [hookah.min.js](https://cdn.rawgit.com/muicss/hookahjs/0.0.1/dist/hookah.min.js)
 
 For tighter integration with your code you can also use the HookahJS NPM package: 
 
