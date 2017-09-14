@@ -2,11 +2,11 @@
 
 <img src="https://www.muicss.com/static/images/hookahjs.svg" width="250px">
 
-HookahJS is a tiny JS library that monitors all `<input>` and `<textarea>` elements on your page and adds `empty/dirty/touched` CSS hooks in response to user interactions with each element.
+HookahJS is a tiny JS library that monitors all input and textarea elements on your page and adds `empty/dirty/touched` CSS hooks in response to user interactions with each element.
 
 ## Introduction
 
-HookahJS is a tiny JS library that monitors all `<input>` and `<textarea>` elements on your page and adds the following CSS classes in response to user interactions with the element:
+HookahJS is a tiny JS library that monitors all input and textarea elements on your page and adds the following CSS classes in response to user interactions with the element:
 
   * `hkjs--empty` - control element is empty
   * `hkjs--not-empty` - control element is not empty
@@ -15,7 +15,7 @@ HookahJS is a tiny JS library that monitors all `<input>` and `<textarea>` eleme
   * `hkjs--touched` - control element has seen a `blur` event
   * `hkjs--untouched` - control element has not seen a `blur` event
 
-HookahJS is 979 bytes (minified + gzipped).
+HookahJS uses CSS keyframes to detect new DOM elements automatically so once the library is loaded, it will automatically add CSS hooks to new input and textarea elements. HookahJS is 979 bytes (minified + gzipped).
 
 ## Quickstart
 
@@ -47,7 +47,7 @@ To use HookahJS you only need to add `hookah.js` to your page and the library wi
  * iOS 6+
  * Android 4.4+
 
-Note: HookahJS will support IE8+ for dynamic DOM elements initialized explicitly (with `hkjs.init()`).
+Note: HookahJS uses CSS keyframes to detect new DOM elements automatically. To use HookahJS in older browsers (IE9-) you can initialize DOM elements explicitly with `hkjs.init()`.
 
 ## Documentation
 
