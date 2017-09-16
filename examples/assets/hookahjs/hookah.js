@@ -23,11 +23,14 @@ function initialize(controlEl) {
   if (controlEl._hkjs == true) return;
   controlEl._hkjs = true;
 
-  // add initial classes
-  if (controlEl.value.length) addClass(controlEl, notEmptyClass);
-  else addClass(controlEl, emptyClass);
+  // add initial `empty/not-empty`
+  inputHandler(null, controlEl);
 
-  addClass(controlEl, untouchedClass + ' ' + pristineClass);
+  // add `pristine` if not pre-seeded with `dirty`
+  if (!hasClass(controlEl, dirtyClass)) addClass(controlEl, pristineClass);
+
+  // add `untouched` if not pre-seeded with `touched`
+  if (!hasClass(controlEl, touchedClass)) addClass(controlEl, untouchedClass);
 
   // replace `untouched` with `touched` when control loses focus
   on(controlEl, 'blur', function blurHandler() {
@@ -54,10 +57,11 @@ function initialize(controlEl) {
 /**
  * Handle input events.
  */
-function inputHandler(ev) {
-  var controlEl = ev.target;
+function inputHandler(ev, el) {
+  var controlEl = el || ev.target,
+      value = controlEl.value || {};  // in case value is null
 
-  if (controlEl.value.length) {
+  if (value.length) {
     removeClass(controlEl, emptyClass);
     addClass(controlEl, notEmptyClass);
   } else {
@@ -79,7 +83,7 @@ function addClass(element, cssClasses) {
 
   for (var i=0; i < splitClasses.length; i++) {
     cssClass = splitClasses[i].trim();
-    if (existingClasses.indexOf(' ' + cssClass + ' ') === -1) {
+    if (existingClasses.indexOf(' ' + cssClass + ' ') == -1) {
       existingClasses += cssClass + ' ';
     }
   }
@@ -110,6 +114,16 @@ function removeClass(element, cssClasses) {
 
 
 /**
+ * Check if element has class.
+ * @param {Element} element - The DOM element.
+ * @param {string} cls - The class name string.
+ */
+function hasClass(element, cls) {
+  return (getExistingClasses(element).indexOf(' ' + cls + ' ') > -1);
+}
+
+
+/**
  * Get existing classes from element.
  * @param {Element} element - The DOM element.
  */
@@ -127,10 +141,10 @@ function getExistingClasses(element) {
  * @param {Boolean} useCapture - Use capture flag.
  */
 function on(element, events, callback, useCapture) {
-  useCapture = (useCapture === undefined) ? false : useCapture;
+  useCapture = (useCapture == undefined) ? false : useCapture;
 
   events.split(' ').map(function(event) {
-    element.addEventListener(event, callback, false, useCapture);
+    element.addEventListener(event, callback, useCapture);
   });
 }
 
@@ -143,10 +157,10 @@ function on(element, events, callback, useCapture) {
  * @param {Boolean} useCapture - Use capture flag.
  */
 function off(element, events, callback, useCapture) {
-  useCapture = (useCapture === undefined) ? false : useCapture;
+  useCapture = (useCapture == undefined) ? false : useCapture;
 
   events.split(' ').map(function(event) {
-    element.removeEventListener(event, callback, false, useCapture);
+    element.removeEventListener(event, callback, useCapture);
   });
 }
 
@@ -158,7 +172,7 @@ function off(element, events, callback, useCapture) {
  * @param {Function} callback - The callback function.
  */
 function one(element, events, callback, useCapture) {
-  useCapture = (useCapture === undefined) ? false : useCapture;
+  useCapture = (useCapture == undefined) ? false : useCapture;
 
   events.split(' ').map(function(event) {
     on(element, event, function onFn(ev) {
@@ -172,9 +186,8 @@ function one(element, events, callback, useCapture) {
 }
 
 
-function hkjs() {
-
-}
+// singleton object
+var hkjs = {};
 
 
 /**

@@ -49,7 +49,7 @@ HookahJS uses CSS @keyframes to detect new DOM elements so if you add any input 
  * iOS 6+
  * Android 4.4+
 
-Note: HookahJS uses CSS @keyframes to detect new DOM elements automatically. To use HookahJS in older browsers (IE9-) you can initialize DOM elements explicitly with `hkjs.init()`.
+Note: HookahJS uses CSS @keyframes to detect new DOM elements automatically. To use HookahJS in IE9 you can initialize DOM elements explicitly with `hkjs.init()`.
 
 ## Documentation
 
