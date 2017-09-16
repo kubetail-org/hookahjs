@@ -24,7 +24,7 @@ To use HookahJS you only need to add `hookah.js` to your page and the library wi
 ```html
 <html>
   <head>
-    <script src="//cdn.rawgit.com/muicss/hookahjs/0.0.2/dist/hookah.min.js"></script>
+    <script src="//cdn.rawgit.com/muicss/hookahjs/0.0.3/dist/hookah.min.js"></script>
     <style>
       .hkjs--touched:not(:valid) {
         border: 1px solid red;
@@ -32,10 +32,13 @@ To use HookahJS you only need to add `hookah.js` to your page and the library wi
     </style>
   </head>
   <body>
+    <input type="text" required>
     <input type="email" required>
   </body>
 </html>
 ```
+
+[demo](https://jsfiddle.net/muicss/y4eat0hu/1/)
 
 HookahJS uses CSS @keyframes to detect new DOM elements so if you add any input or textarea elements dynamically, HookahJS will add CSS hooks to them automatically.
 
@@ -57,8 +60,8 @@ Note: HookahJS uses CSS @keyframes to detect new DOM elements automatically. To 
 
 For production systems we recommend that you host the library file yourself which you can download from the `dist/` directory in this repository:
 
- * [hookah.js](https://cdn.rawgit.com/muicss/hookahjs/0.0.2/dist/hookah.js)
- * [hookah.min.js](https://cdn.rawgit.com/muicss/hookahjs/0.0.2/dist/hookah.min.js)
+ * [hookah.js](https://cdn.rawgit.com/muicss/hookahjs/0.0.3/dist/hookah.js)
+ * [hookah.min.js](https://cdn.rawgit.com/muicss/hookahjs/0.0.3/dist/hookah.min.js)
 
 For tighter integration with your code you can also use the HookahJS NPM package: 
 
