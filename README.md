@@ -6,7 +6,7 @@ HookahJS is a tiny JS library that monitors all input and textarea elements on y
 
 ## Introduction
 
-HookahJS is a tiny JS library that monitors all input and textarea elements on your page and adds the following CSS classes in response to user interactions with the element:
+HookahJS is a tiny JS library that monitors all input and textarea elements on your page and adds the following CSS classes in response to user interactions with each element:
 
   * `hkjs--empty` - control element is empty
   * `hkjs--not-empty` - control element is not empty
