@@ -1,6 +1,6 @@
 # HookahJS
 
-<img src="https://www.muicss.com/static/images/hookahjs.svg" width="250px">
+<img src="https://www.muicss.com/static/images/hookahjs.svg?1" width="250px">
 
 HookahJS is a tiny JS library that monitors all input and textarea elements on your page and adds `empty/dirty/touched` CSS hooks to each element automatically.
 
