@@ -22,6 +22,7 @@ HookahJS uses CSS @keyframes to detect new DOM elements automatically so once th
 To use HookahJS you only need to add `hookah.js` to your page and the library will automatically add event listeners to all current and future input and textarea elements. The following example will draw a red box around an invalid input box after the user has touched the element:
 
 ```html
+<!doctype html>
 <html>
   <head>
     <script src="//cdn.rawgit.com/muicss/hookahjs/0.0.3/dist/hookah.min.js"></script>
