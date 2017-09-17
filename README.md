@@ -41,7 +41,7 @@ To use HookahJS you only need to add `hookah.js` to your page and the library wi
 
 [View Demo &raquo;](https://jsfiddle.net/muicss/y4eat0hu/)
 
-HookahJS uses CSS @keyframes to detect new DOM elements so if you add any input or textarea elements dynamically, HookahJS will add CSS hooks to them automatically.
+HookahJS uses CSS @keyframes to detect new DOM elements automatically so once the library is loaded, it will automatically add CSS hooks to new input and textarea elements.
 
 ## Browser Support
 
