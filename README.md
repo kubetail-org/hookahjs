@@ -15,7 +15,7 @@ HookahJS is a tiny JS library that monitors all input and textarea elements on y
   * `hkjs--touched` - control element has seen a `blur` event
   * `hkjs--untouched` - control element has not seen a `blur` event
 
-HookahJS uses CSS @keyframes to detect new DOM elements automatically so once the library is loaded, it will automatically add CSS hooks to new input and textarea elements. HookahJS is 999 bytes (minified + gzipped).
+HookahJS uses CSS @keyframes to detect new DOM elements so once the library is loaded, it will automatically add CSS hooks to new input and textarea elements. HookahJS is 999 bytes (minified + gzipped).
 
 ## Quickstart
 
@@ -41,7 +41,7 @@ To use HookahJS you only need to add `hookah.js` to your page and the library wi
 
 [View Demo &raquo;](https://jsfiddle.net/muicss/y4eat0hu/)
 
-HookahJS uses CSS @keyframes to detect new DOM elements automatically so once the library is loaded, it will automatically add CSS hooks to new input and textarea elements.
+HookahJS uses CSS @keyframes to detect new DOM elements so once the library is loaded, it will automatically add CSS hooks to new input and textarea elements.
 
 ## Browser Support
 
