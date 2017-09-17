@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-Note that if you initialize HookahJS after the `DOMContentLoaded` event fires, there may be a flash of unstyled content. To avoid this you can seed your page with `.hkjs--empty`/`.hkjs--not-empty` classes as necessary.
+HookahJS can be loaded asynchronously but keep in mind that if HookahJS is initialized after the DOM content has been displayed to the user, there may be a flash of unstyled content. To avoid this you can seed your page with `.hkjs--empty`/`.hkjs--not-empty` classes as necessary.
 
 ### How to initialize elements selectively
 
