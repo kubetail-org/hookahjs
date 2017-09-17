@@ -38,7 +38,7 @@ To use HookahJS you only need to add `hookah.js` to your page and the library wi
 </html>
 ```
 
-[Demo](https://jsfiddle.net/muicss/y4eat0hu/2/)
+[View Demo &raquo;](https://jsfiddle.net/muicss/y4eat0hu/)
 
 HookahJS uses CSS @keyframes to detect new DOM elements so if you add any input or textarea elements dynamically, HookahJS will add CSS hooks to them automatically.
 
