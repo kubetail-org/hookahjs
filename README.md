@@ -2,11 +2,11 @@
 
 <img src="https://www.muicss.com/static/images/hookahjs.svg?1" width="250px">
 
-HookahJS is a tiny JS library that monitors all input and textarea elements on your page and adds `empty/dirty/touched` CSS hooks to each element automatically.
+HookahJS is a tiny JavaScript library that monitors all input and textarea elements on your page and adds `empty/dirty/touched` CSS hooks to each element automatically.
 
 ## Introduction
 
-HookahJS is a tiny JS library that monitors all input and textarea elements on your page and adds the following CSS classes in response to user interactions with each element:
+HookahJS is a tiny JavaScript library that monitors all input and textarea elements on your page and adds the following CSS classes in response to user interactions with each element:
 
   * `hkjs--empty` - control element is empty
   * `hkjs--not-empty` - control element is not empty
