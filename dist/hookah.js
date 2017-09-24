@@ -1,6 +1,7 @@
-// define global object
-hkjs = (function () {
-'use strict';
+if (!this.hkjs) (function(doc, x) {
+  // define global object
+  hkjs = (function() {
+    'use strict';
 
 var touchedClass = 'hkjs--touched',  // hasn't lost focus yet
     untouchedClass = 'hkjs--untouched',
@@ -186,73 +187,72 @@ function one(element, events, callback, useCapture) {
 }
 
 
-// singleton object
-var hkjs = {};
+return {
+  /**
+   * Initialize library.
+   * @param {Element} controlEl - An input or textarea element (optional)
+   */
+  init: function(controlEl) {
+    // initialize and exit if controlEl is defined
+    if (controlEl) return initialize(controlEl);
 
+    var doc = document;
 
-/**
- * Initialize library.
- * @param {Element} controlEl - An input or textarea element (optional)
- */
-hkjs.init = function init(controlEl) {
-  // initialize and exit if controlEl is defined
-  if (controlEl) return initialize(controlEl);
+    // check flag
+    if (doc._hkjs == true) return;
+    doc._hkjs = true;
 
-  var doc = document;
+    // otherwise, initialize all elements
+    var cssRule = 'input:not([type="radio"]):not([type="checkbox"]),textarea',
+        elList = doc.querySelectorAll(cssRule),
+        i = elList.length;
+    while (i--) initialize(elList[i]);
 
-  // check flag
-  if (doc._hkjs == true) return;
-  doc._hkjs = true;
+    // add CSS detector
+    var cssText = '@keyframes hkjs-node-inserted' +
+      '{from{transform:none;}to{transform:none;}}' +
+      cssRule +
+      '{animation-duration:0.0001s;animation-name:hkjs-node-inserted;}';
 
-  // otherwise, initialize all elements
-  var cssRule = 'input:not([type="radio"]):not([type="checkbox"]),textarea',
-      elList = doc.querySelectorAll(cssRule),
-      i = elList.length;
-  while (i--) initialize(elList[i]);
+    var e = doc.createElement('style');
+    e.type = 'text/css';
+    
+    if (e.styleSheet) e.styleSheet.cssText = cssText;
+    else e.appendChild(doc.createTextNode(cssText));
 
-  // add CSS detector
-  var cssText = '@keyframes hkjs-node-inserted';
-  cssText += '{from{transform:none;}to{transform:none;}}';
-  cssText += cssRule;
-  cssText += '{animation-duration:0.0001s;animation-name:hkjs-node-inserted;}';
+    // add to document
+    var head = doc.head;
+    head.insertBefore(e, head.firstChild);
+    
+    // add event listener
+    on(doc, 'animationstart', function(ev) {
+      // check event name
+      if (ev.animationName != 'hkjs-node-inserted') return;
 
-  var e = doc.createElement('style');
-  e.type = 'text/css';
-
-  if (e.styleSheet) e.styleSheet.cssText = cssText;
-  else e.appendChild(doc.createTextNode(cssText));
-
-  // add to document
-  var head = doc.head;
-  head.insertBefore(e, head.firstChild);
-
-  // add event listener
-  var animEvs = 'animationstart mozAnimationStart webkitAnimationStart';
-  on(doc, animEvs, function(ev) {
-    // check event name
-    if (ev.animationName != 'hkjs-node-inserted') return;
-
-    // stop other callbacks
-    ev.stopImmediatePropagation();
-
-    // initialize element
-    initialize(ev.target);
-  }, true);
+      // stop other callbacks
+      ev.stopImmediatePropagation();
+      
+      // initialize element
+      initialize(ev.target);
+    }, true);
+  }
 };
 
+  })();
 
-// export
-return hkjs;
-
-})();
-
-// initialize
-document.addEventListener('DOMContentLoaded', function() {
-  // trigger init event
-  var ev = document.createEvent('HTMLEvents');
-  ev.initEvent('hkjs-init', false, true);
-  document.dispatchEvent(ev);
+  // initialize
+  function init(ev) {
+    // trigger init event
+    ev = doc.createEvent('HTMLEvents');
+    ev.initEvent('hkjs-init', false, true);
+    doc.dispatchEvent(ev);
   
-  // initialize library
-  if (!ev.defaultPrevented) hkjs.init();
-});
+    // initialize library
+    if (!ev.defaultPrevented) hkjs.init();
+  }
+
+  // execute on DOMContentLoaded
+  x = doc.readyState;
+  if (x == 'interactive' || x == 'complete') init();
+  else doc.addEventListener('DOMContentLoaded', function() {init();});
+})(document);

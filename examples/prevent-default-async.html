@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <style>
+      .hkjs--touched:not(:valid) {
+        border: 1px solid red;
+      }
+    </style>
+    <script src="assets/hookahjs/hookah.js" async></script>
+    <script>
+      document.addEventListener('hkjs-init', function(ev) {
+        ev.preventDefault();
+      });
+    </script>
+  </head>
+  <body>
+    <input type="email" required>
+  </body>
+</html>
