@@ -1,5 +1,9 @@
 # HookahJS Changelog
 
+## 0.0.4 - August 10, 2018
+
+* Added support for Event object constructor in `hkjs-init` event dispatcher
+
 ## 0.0.3 - September 16, 2017
 
 * Added e2e browser testing
