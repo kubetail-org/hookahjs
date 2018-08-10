@@ -8,7 +8,8 @@ if (!this.<%= namespace %>) (function(doc, x) {
   function init(ev) {
     // trigger init event
     ev = doc.createEvent('HTMLEvents');
-    ev.initEvent('hkjs-init', false, true);
+    if (ev.initEvent) ev.initEvent('hkjs-init', false, true);
+    else ev = new Event('hkjs-init', {cancelable: true});
     doc.dispatchEvent(ev);
   
     // initialize library
