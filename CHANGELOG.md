@@ -1,5 +1,9 @@
 # HookahJS Changelog
 
+## 0.0.5 - December 11, 2020
+
+* Upgraded devDependencies
+
 ## 0.0.4 - August 10, 2018
 
 * Added support for Event object constructor in `hkjs-init` event dispatcher
