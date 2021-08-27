@@ -1,5 +1,12 @@
 # HookahJS Changelog
 
+## 0.0.6 - August 27, 2021
+
+* Bumped path-parse from 1.0.6 to 1.0.7
+* Bumped hosted-git-info from 2.8.8 to 2.8.9
+* Bumped lodash from 4.17.20 to 4.17.21
+* Bumped y18n from 3.2.1 to 3.2.2
+
 ## 0.0.5 - December 11, 2020
 
 * Upgraded devDependencies

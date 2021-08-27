@@ -1,6 +1,6 @@
 {
   "name": "hookahjs",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "description": "JS library that adds empty/dirty/touched CSS hooks to input and textarea elements",
   "keywords": [
